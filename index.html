@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Martabak Manja — Manis, Legit, Terjangkau</title>
+<meta name="theme-color" content="#4A2511">
+<meta name="description" content="Martabak manis kekinian, manis, legit, dan terjangkau. Pesan langsung via WhatsApp.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Martabak Manja">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brown-dark:#3A1F0F;
+    --brown:#4A2511;
+    --caramel:#B5652E;
+    --amber:#E0A020;
+    --cheese:#F4C430;
+    --cream:#FFF6E7;
+    --cream-2:#FBEAD0;
+    --red:#C1440E;
+    --ink:#2A1608;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Nunito Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+    padding-bottom:90px;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2', sans-serif;
+    color:var(--brown-dark);
+  }
+  a{color:inherit;}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(244,196,48,0.35), transparent 45%),
+      radial-gradient(circle at 85% 0%, rgba(193,68,14,0.25), transparent 40%),
+      linear-gradient(160deg, var(--brown-dark) 0%, var(--brown) 55%, var(--caramel) 130%);
+    color:var(--cream);
+    padding:34px 22px 40px;
+    position:relative;
+    overflow:hidden;
+    border-radius:0 0 28px 28px;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right:-40px; bottom:-60px;
+    width:220px; height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(244,196,48,0.5), transparent 70%);
+  }
+  .eyebrow-badge{
+    display:inline-block;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,246,231,0.35);
+    color:var(--cheese);
+    font-weight:700;
+    font-size:12.5px;
+    padding:5px 12px;
+    border-radius:999px;
+    letter-spacing:.2px;
+  }
+  .hero h1{
+    font-size:clamp(34px, 9vw, 46px);
+    line-height:1.05;
+    margin-top:14px;
+    font-weight:800;
+  }
+  .hero h1 span{color:var(--cheese);}
+  .hero p{
+    margin-top:10px;
+    max-width:34ch;
+    color:#F3E3C8;
+    font-size:15.5px;
+  }
+  .hero-cta{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    border:none;
+    border-radius:14px;
+    padding:12px 18px;
+    font-weight:700;
+    font-size:14.5px;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .btn-primary{
+    background:var(--cheese);
+    color:var(--brown-dark);
+  }
+  .btn-ghost{
+    background:transparent;
+    border:1.5px solid rgba(255,246,231,0.5);
+    color:var(--cream);
+  }
+  .hero-strip{
+    margin-top:22px;
+    display:flex;
+    gap:18px;
+    font-size:13px;
+    color:#F3E3C8;
+    flex-wrap:wrap;
+  }
+  .hero-strip b{color:var(--cheese); display:block; font-size:17px; font-family:'Baloo 2';}
+
+  /* ===== SECTION HEADS ===== */
+  .section{padding:30px 20px 6px;}
+  .section-head h2{font-size:23px;}
+  .section-head p{color:#6B4A32; font-size:14px; margin-top:4px;}
+
+  /* ===== MENU ===== */
+  .menu-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:18px;
+  }
+  .menu-card{
+    background:#fff;
+    border:1px solid #F0DDBB;
+    border-radius:18px;
+    padding:14px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    box-shadow:0 3px 10px rgba(74,37,17,0.06);
+  }
+  .menu-thumb{
+    width:64px; height:64px;
+    border-radius:14px;
+    flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px;
+    background:linear-gradient(145deg, var(--cream-2), #F6D89A);
+  }
+  .menu-info{flex:1; min-width:0;}
+  .menu-info h3{font-size:16px; font-weight:600;}
+  .menu-info .tag{
+    display:inline-block;
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--red);
+    background:#FCE6DA;
+    padding:2px 8px;
+    border-radius:999px;
+    margin-top:3px;
+  }
+  .menu-info .price{
+    font-family:'Baloo 2';
+    font-weight:700;
+    color:var(--brown);
+    font-size:16px;
+    margin-top:5px;
+  }
+  .menu-info .price small{font-size:11.5px; color:#9A7A5C; font-weight:600;}
+  .qty-control{
+    display:flex; align-items:center; gap:8px;
+    flex-shrink:0;
+  }
+  .qty-btn{
+    width:30px; height:30px;
+    border-radius:9px;
+    border:1.5px solid var(--caramel);
+    background:var(--cream);
+    color:var(--brown);
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .qty-btn:active{transform:scale(0.92);}
+  .qty-num{min-width:18px; text-align:center; font-weight:700;}
+
+  /* ===== HOW TO ORDER ===== */
+  .steps{
+    margin-top:16px;
+    display:grid;
+    gap:12px;
+  }
+  .step{
+    display:flex; gap:12px; align-items:flex-start;
+    background:#fff;
+    border-radius:16px;
+    padding:14px;
+    border:1px solid #F0DDBB;
+  }
+  .step-num{
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--brown);
+    color:var(--cheese);
+    font-family:'Baloo 2';
+    font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-size:14px;
+  }
+  .step p{font-size:13.5px; color:#5A3B22;}
+  .step strong{display:block; color:var(--brown-dark); font-size:14.5px; margin-bottom:2px;}
+
+  /* ===== PLATFORM CHIPS ===== */
+  .chip-row{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;}
+  .chip{
+    background:#fff;
+    border:1.5px solid #F0DDBB;
+    border-radius:12px;
+    padding:10px 14px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--brown);
+    flex:1;
+    min-width:100px;
+    text-align:center;
+  }
+
+  footer{
+    text-align:center;
+    padding:34px 20px 20px;
+    color:#9A7A5C;
+    font-size:12.5px;
+  }
+
+  /* ===== STICKY CART ===== */
+  .cart-bar{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    background:var(--brown-dark);
+    color:var(--cream);
+    padding:13px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 -6px 20px rgba(0,0,0,0.25);
+    transform:translateY(110%);
+    transition:transform .25s ease;
+    z-index:50;
+  }
+  .cart-bar.show{transform:translateY(0);}
+  .cart-info .count{font-size:12px; color:#D9B98A;}
+  .cart-info .total{font-family:'Baloo 2'; font-size:18px; font-weight:700; color:var(--cheese);}
+  .cart-bar .btn-primary{padding:11px 20px;}
+
+  @media(min-width:640px){
+    .menu-grid{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr 1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="eyebrow-badge">Buka setiap hari · 14.00–21.00</span>
+  <h1>Martabak <span>Manja</span></h1>
+  <p>Martabak manis kekinian, lumer di setiap gigitan — dipesan online, harganya tetap ramah di kantong.</p>
+  <div class="hero-cta">
+    <button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Lihat Menu</button>
+    <a class="btn btn-ghost" href="#cara-pesan" style="text-decoration:none; display:inline-flex; align-items:center;">Cara Pesan</a>
+    <button class="btn btn-ghost" id="installBtn" style="display:none;" onclick="installApp()">📲 Pasang App</button>
+  </div>
+  <div class="hero-strip">
+    <div><b>Rp3rb</b>mulai per potong</div>
+    <div><b>7 Rasa</b>kekinian</div>
+    <div><b>±20 mnt</b>siap antar</div>
+  </div>
+</div>
+
+<div class="section" id="menu">
+  <div class="section-head">
+    <h2>Pilih Rasa Favoritmu</h2>
+    <p>Semua martabak dipanggang fresh saat kamu pesan.</p>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</div>
+
+<div class="section" id="cara-pesan">
+  <div class="section-head">
+    <h2>Cara Pesan</h2>
+    <p>Tiga langkah, martabak sampai di depan pintu.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <p><strong>Pilih & atur jumlah</strong>Tambahkan rasa yang kamu mau lewat tombol +/- di menu.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <p><strong>Tekan Pesan Sekarang</strong>Ringkasan pesanan otomatis terkirim ke WhatsApp kami.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <p><strong>Konfirmasi & bayar</strong>Kami konfirmasi alamat, lalu martabak diantar hangat.</p>
+    </div>
+  </div>
+  <div class="chip-row">
+    <div class="chip">📱 WhatsApp</div>
+    <div class="chip">🛵 GoFood</div>
+    <div class="chip">🛍️ ShopeeFood</div>
+    <div class="chip">🚗 GrabFood</div>
+  </div>
+</div>
+
+<footer>
+  Martabak Manja · Palembang<br>
+  Dibuat dengan 🧡 untuk pelanggan setia
+</footer>
+
+<div class="cart-bar" id="cartBar">
+  <div class="cart-info">
+    <div class="count" id="cartCount">0 item</div>
+    <div class="total" id="cartTotal">Rp0</div>
+  </div>
+  <button class="btn btn-primary" onclick="checkout()">Pesan Sekarang</button>
+</div>
+
+<script>
+// ==== KONFIGURASI: ganti nomor WhatsApp bisnis di sini (format 62xxxxxxxxxx) ====
+const WA_NUMBER = "6281234567890";
+
+const menu = [
+  {id:1, name:"Original Coklat Meses", tag:"Klasik", price:3000, emoji:"🍫"},
+  {id:2, name:"Original Kacang + Keju", tag:"Klasik", price:3000, emoji:"🥜"},
+  {id:3, name:"Coklat Keju", tag:"Best Seller", price:3500, emoji:"🧀"},
+  {id:4, name:"Nutella Cheese", tag:"Kekinian", price:4500, emoji:"🍯"},
+  {id:5, name:"Red Velvet Cheese", tag:"Kekinian", price:4500, emoji:"❤️"},
+  {id:6, name:"Green Tea Oreo", tag:"Kekinian", price:4000, emoji:"🍵"},
+  {id:7, name:"Biscoff Cheese", tag:"Premium", price:6000, emoji:"🍪"},
+];
+
+const cart = {}; // id -> qty
+
+function formatRp(n){
+  return "Rp" + n.toLocaleString("id-ID");
+}
+
+function renderMenu(){
+  const grid = document.getElementById("menuGrid");
+  grid.innerHTML = menu.map(item => `
+    <div class="menu-card">
+      <div class="menu-thumb">${item.emoji}</div>
+      <div class="menu-info">
+        <h3>${item.name}</h3>
+        <span class="tag">${item.tag}</span>
+        <div class="price">${formatRp(item.price)} <small>/potong</small></div>
+      </div>
+      <div class="qty-control">
+        <button class="qty-btn" onclick="changeQty(${item.id}, -1)">–</button>
+        <span class="qty-num" id="qty-${item.id}">0</span>
+        <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function changeQty(id, delta){
+  const current = cart[id] || 0;
+  const next = Math.max(0, current + delta);
+  if(next === 0){ delete cart[id]; } else { cart[id] = next; }
+  document.getElementById(`qty-${id}`).textContent = next;
+  updateCartBar();
+}
+
+function updateCartBar(){
+  const bar = document.getElementById("cartBar");
+  const ids = Object.keys(cart);
+  const totalItems = ids.reduce((sum, id) => sum + cart[id], 0);
+  const totalPrice = ids.reduce((sum, id) => {
+    const item = menu.find(m => m.id == id);
+    return sum + item.price * cart[id];
+  }, 0);
+  document.getElementById("cartCount").textContent = `${totalItems} item`;
+  document.getElementById("cartTotal").textContent = formatRp(totalPrice);
+  bar.classList.toggle("show", totalItems > 0);
+}
+
+function checkout(){
+  const ids = Object.keys(cart);
+  if(ids.length === 0) return;
+  let lines = ["Halo Martabak Manja, saya mau pesan:"];
+  let total = 0;
+  ids.forEach(id => {
+    const item = menu.find(m => m.id == id);
+    const qty = cart[id];
+    const subtotal = item.price * qty;
+    total += subtotal;
+    lines.push(`- ${item.name} x${qty} = ${formatRp(subtotal)}`);
+  });
+  lines.push(`\nTotal: ${formatRp(total)}`);
+  lines.push("\nNama:\nAlamat:\n");
+  const message = encodeURIComponent(lines.join("\n"));
+  window.open(`https://wa.me/${WA_NUMBER}?text=${message}`, "_blank");
+}
+
+renderMenu();
+
+// ==== PWA: install prompt + service worker ====
+let deferredPrompt;
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById("installBtn").style.display = "inline-flex";
+});
+
+function installApp(){
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(() => {
+    deferredPrompt = null;
+    document.getElementById("installBtn").style.display = "none";
+  });
+}
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js").catch(err => {
+      console.log("Service worker registration failed:", err);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
